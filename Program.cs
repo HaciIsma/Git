@@ -18,9 +18,10 @@ namespace Git
             string remoteControl = @"https://github.com/HaciIsma/Git.git;git";
             string cd = $"cd ..; cd ..;";
             string init = "git init;";
-            string commit = "git commit -m \'first commit\' ";
+            string commit = "git commit -m \'first commit\'; ";
             string add = "git add . ;";
-            process.StartInfo = new ProcessStartInfo(destination,cd+init+add+commit+";pause");
+            string remote = "git remote add origin https://github.com/HaciIsma/Git.git;";
+            process.StartInfo = new ProcessStartInfo(destination,cd+init+add+commit+remote+"pause");
             process.Start();
         }
     }

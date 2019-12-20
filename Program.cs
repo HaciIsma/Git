@@ -21,7 +21,8 @@ namespace Git
             string commit = "git commit -m \'first commit\'; ";
             string add = "git add . ;";
             string remote = "git remote add origin https://github.com/HaciIsma/Git.git;";
-            process.StartInfo = new ProcessStartInfo(destination,cd+init+add+commit+remote+"pause");
+            string push = "git push - u origin master";
+            process.StartInfo = new ProcessStartInfo(destination, cd + init + add + commit + remote + push + "pause");
             process.Start();
         }
     }
